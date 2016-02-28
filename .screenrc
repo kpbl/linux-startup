@@ -1,0 +1,34 @@
+#wing two lines give a two-line status, with the current window highlighted
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+
+#statusbar
+#hardstatus off
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
+
+# huge scrollback buffer
+defscrollback 5000
+
+# no welcome message
+startup_message off
+
+# 256 colors
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# default windows
+screen -t Shell1  1 bash
+screen -t Shell2  2 bash
+screen -t Shell3  3 bash
+screen -t Shell4  4 bash
+screen -t Shell5  5 bash
+screen -t Shell6  6 bash
+bind c screen 1 # window numbering starts at 1 not 0
+bind 0 select 10
+select 1
+
+# get rid of silly xoff stuff
+bind s split
