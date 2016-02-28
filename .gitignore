@@ -1,5 +1,6 @@
-/*
-!/.vimrc
-!/.bashrc
-!/.screenrc
-!/.gitignore
+.bash_history
+.bash_logout
+.config/
+.gitconfig
+.profile
+.viminfo
